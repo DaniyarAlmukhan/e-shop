@@ -35,7 +35,6 @@ const SignUp = () => {
 
             resetFormFields()
 
-
         } catch (e) {
             console.error(e);
         }
