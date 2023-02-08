@@ -5,7 +5,7 @@ import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import { CartContext } from '../../context/cartContext';
 
 const Cart = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartItems } = useContext(CartContext);
 
   const handleCartOpen = () => {
     setIsCartOpen(!isCartOpen)
@@ -14,7 +14,7 @@ const Cart = () => {
   return (
     <div className='cart-icon-container'>
       <ShoppingIcon className='shopping-icon' onClick={handleCartOpen} />
-      <span className='item-count'>0</span>
+      <span className='item-count'>{cartItems.reduce((a, b) => a + b.quantity, 0)}</span>
     </div>
   )
 }
