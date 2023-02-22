@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase';
 import FormInput from '../form-input/FormInput';
-import './SignIn.scss';
 import Button from '../button/Button';
+import { SignInContainer } from './styles';
 
 const defaultFormFields = {
 
@@ -41,7 +41,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className='sign-up-container'>
+        <SignInContainer>
             <h2>Already have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ const SignIn = () => {
                 </div>
 
             </form>
-        </div>
+        </SignInContainer>
     )
 }
 
